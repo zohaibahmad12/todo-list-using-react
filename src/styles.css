@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #171723;
+}
+
+
+
+.header {
+    text-align: center;
+    font-size: 4vw;
+    margin-top: 1vw;
+    font-weight: bolder;
+    color: #a0aad0;
+}
+
+.todo-container {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #25273c;
+    padding: 2vw 0vw;
+    border-radius: 10px;
+}
+
+.todoitem {
+
+    border-bottom: 1px solid #a0aad0;
+    margin-bottom: 1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0vw 1vw;
+    
+}
+
+.todoitem-leftdiv {
+    display: flex;
+    align-items: center;
+}
+
+.todoitem-rightdiv {
+    display: flex;
+    align-items: center;
+}
+
+.todobutton-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.todo-button{
+    width: 17%;
+    height: 3vw;
+    background-color: #646df6;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.3vw;
+    cursor: pointer;
+}
+
+.todoitem-checkbox{
+    
+    background-color:red;
+    color: black;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.todoitem-name{
+    color: #a0aad0;
+    font-size: 1.4vw;
+}
+.fas{
+    color: #a0aad0;
+    background-color:#25273c ;
+    margin: 0 1vw;
+    padding: 0.5vw;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
