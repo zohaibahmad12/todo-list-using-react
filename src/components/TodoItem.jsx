@@ -1,12 +1,12 @@
 import React from "react";
 
-const TodoItem = () => {
+const TodoItem = ({itemText}) => {
 
     return (
         <div className="todoitem">
             <div className="todoitem-leftdiv">
                 <input className="todoitem-checkbox" type="checkbox" />
-                <p className="todoitem-name">Task 1</p>
+                <p className="todoitem-name">{itemText}</p>
             </div>
 
             <div className="todoitem-rightdiv">

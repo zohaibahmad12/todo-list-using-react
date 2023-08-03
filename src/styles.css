@@ -17,14 +17,14 @@ body {
     width: 50%;
     margin: 0 auto;
     background-color: #25273c;
-    padding: 22px 0px;
+    padding: 15px 0px;
     border-radius: 10px;
 }
 
 .todoitem {
 
     border-bottom: 1px solid #a0aad0;
-    margin-bottom: 17px;
+    margin: 17px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,22 +42,46 @@ body {
     align-items: center;
 }
 
-.todobutton-div {
+.todoform-div {
+
+    
     display: flex;
+    padding: 20px;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid #a0aad0;;
+
+}
+.todoform-div form{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 .todo-button{
     width: 17%;
     padding: 1vw;
-    background-color: #646df6;
-    border: none;
+    background-color: #25273c;
+    color: #a0aad0;
+    border: 1px solid #a0aad0;
     border-radius: 8px;
-    color: white;
     font-size: 15px;
     cursor: pointer;
 }
+.add-item-input{
 
+    width: 70%;
+    padding: 15px;
+    background-color: #25273c;
+    color: #a0aad0;
+    border: 1px solid #a0aad0;
+    border-radius: 6px;
+
+}
+
+.add-item-input::placeholder{
+    color: #a0aad0;
+    opacity: 0.6;
+}
 .todoitem-checkbox{
     
     background-color:red;
@@ -82,7 +106,7 @@ body {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
    
     .todo-container{
         width: 90%;
@@ -90,6 +114,4 @@ body {
   }
 
 
-  span{
-    color: white;
-  }
+  
