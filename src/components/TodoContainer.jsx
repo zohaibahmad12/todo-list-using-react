@@ -26,7 +26,13 @@ const TodoContainer = () => {
             setNewItemText("");
         }
 
+    }
 
+    const deleteItem=(index)=>{
+
+        const newArray = [...allItems];
+        newArray.splice(index,1);
+        setAllItems(newArray);
     }
 
 
@@ -35,7 +41,7 @@ const TodoContainer = () => {
 
             <TodoButton newItemText={newItemText} onChange={handleInputChange} onSubmit={addNewItemToList} />
 
-            {allItems.map((currentValue) => <TodoItem itemText={currentValue} />)}
+            {allItems.map((currentValue,currentIndex) => <TodoItem key={currentIndex} itemText={currentValue} itemId={currentIndex} deleteItem={deleteItem} />)}
 
         </div>
     )
