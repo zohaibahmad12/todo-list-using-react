@@ -1,12 +1,16 @@
 import React from "react";
 
-const TodoItem = ({itemText,itemId,deleteItem,editItem}) => {
+const TodoItem = ({itemText,itemId,isCheckbox,deleteItem,editItem,handleCheckboxChange}) => {
 
-    console.log(itemText);
+   
     return (
         <div className="todoitem">
             <div className="todoitem-leftdiv">
-                <input className="todoitem-checkbox" type="checkbox" />
+              { 
+                (isCheckbox)?
+                 <input className="todoitem-checkbox" type="checkbox" checked="true" onChange={()=>handleCheckboxChange(itemId)} /> :
+                 <input className="todoitem-checkbox" type="checkbox" onChange={()=>handleCheckboxChange(itemId)} />
+                  }
                 <p className="todoitem-name">{itemText}</p>
             </div>
 
