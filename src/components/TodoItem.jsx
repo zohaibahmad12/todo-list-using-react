@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoItem = ({itemText,itemId,deleteItem}) => {
+const TodoItem = ({itemText,itemId,deleteItem,editItem}) => {
 
     return (
         <div className="todoitem">
@@ -10,7 +10,7 @@ const TodoItem = ({itemText,itemId,deleteItem}) => {
             </div>
 
             <div className="todoitem-rightdiv">
-                <i className="fas fa-edit"></i>
+                <i className="fas fa-edit" onClick={()=>editItem(itemId)}></i>
                 <i className="fas fa-trash" onClick={()=>deleteItem(itemId)}></i>
             </div>
         </div>
