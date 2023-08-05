@@ -2,6 +2,7 @@ import React from "react";
 
 const TodoItem = ({itemText,itemId,deleteItem,editItem}) => {
 
+    console.log(itemText);
     return (
         <div className="todoitem">
             <div className="todoitem-leftdiv">

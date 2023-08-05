@@ -45,14 +45,20 @@ const TodoContainer = () => {
         else if(newItemText!=="" && isEdit===true){
 
             const newArray=[...allItems];
-            newArray.splice(editItemId,1,newItemText);
+           for (const object of newArray) {
+            if (object.id===editItemId) {
+                console.log("Editing"+ object.text + object.id);
+                object.text=newItemText;
+            }
+           }
             setAllItems(newArray);
             setNewItemText("");
             setIsEdit(false);
             setEditItemId(null);
         }
         else {
-            const newArray = [...allItems, newItemText];
+           
+            const newArray = [...allItems, {text:newItemText,id:new Date().getTime().toString()}];
             setAllItems(newArray);
             setNewItemText("");
 
@@ -62,8 +68,12 @@ const TodoContainer = () => {
 
     const deleteItem = (index) => {
 
-        const newArray = [...allItems];
-        newArray.splice(index, 1);
+
+        const newArray = allItems.filter((currentElement)=>{
+            return currentElement.id!==index;
+        })
+        
+        
         setAllItems(newArray);
     }
 
@@ -71,12 +81,12 @@ const TodoContainer = () => {
     const editItem=(index)=>{
 
        
-       const currentElement= allItems.find((currentElement,currentIndex)=>{
-            return currentIndex===index;
+       const currentElement= allItems.find((currentElement)=>{
+            return currentElement.id===index;
         });
 
         setIsEdit(true);
-        setNewItemText(currentElement);
+        setNewItemText(currentElement.text);
         setEditItemId(index)
 
     }
@@ -86,7 +96,7 @@ const TodoContainer = () => {
 
             <TodoButton newItemText={newItemText} onChange={handleInputChange} onSubmit={addNewItemToList} isEdit={isEdit} />
 
-            {allItems.map((currentValue, currentIndex) => <TodoItem key={currentIndex} itemText={currentValue} itemId={currentIndex} deleteItem={deleteItem} editItem={editItem} />)}
+            {allItems.map((currentElement) => <TodoItem key={currentElement.id} itemText={currentElement.text} itemId={currentElement.id} deleteItem={deleteItem} editItem={editItem} />)}
 
         </div>
     )

@@ -24,11 +24,11 @@ body {
 .todoitem {
 
     border-bottom: 1px solid #a0aad0;
-    margin: 17px 0px;
+    border-top:1px solid #a0aad0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:0px 12px;
+    padding:5px 12px;
     
 }
 
@@ -49,7 +49,6 @@ body {
     padding: 20px;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #a0aad0;;
 
 }
 .todoform-div form{
